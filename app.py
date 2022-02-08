@@ -20,7 +20,7 @@ def get_icon(placeholder):
     try:
         return send_file(f'static/{placeholder}.png', mimetype='image/gif')
     except:
-        icon = Image.open("static/icon.png")
+        icon = Image.open("static/theme_color.png")
         edit = ImageDraw.Draw(icon)
         font = ImageFont.truetype("salmapro.otf", 25)
         w, h = edit.textsize(placeholder, font=font)
