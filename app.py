@@ -17,13 +17,13 @@ def stat():
 @app.route('/icon/<placeholder>/')
 def get_icon(placeholder):
     placeholder = placeholder.upper()[0:2]
-    icon = Image.open("/home/ubuntu/icon/static/theme_color.png")
+    icon = Image.open("/home/ubuntu/icon/backend/static/theme_color.png")
     edit = ImageDraw.Draw(icon)
-    font = ImageFont.truetype("/home/ubuntu/icon/Lato-Regular.ttf", 20)
+    font = ImageFont.truetype("/home/ubuntu/icon/backend/Lato-Regular.ttf", 20)
     w, h = edit.textsize(placeholder, font=font)
     edit.text(((50-w)/2, (50-h)/2-2), placeholder, (255, 255, 255), font=font)
-    icon.save(f'/home/ubuntu/icon/static/{placeholder}.png')
-    return send_file(f'/home/ubuntu/icon/static/{placeholder}.png', mimetype='image/gif')
+    icon.save(f'/home/ubuntu/icon/backend/static/{placeholder}.png')
+    return send_file(f'/home/ubuntu/icon/backend/static/{placeholder}.png', mimetype='image/gif')
 
 
 if __name__ == '__main__':
